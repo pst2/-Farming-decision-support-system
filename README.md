@@ -48,7 +48,7 @@ project/
 git clone https://github.com/ten-nguoi-dung/ten-kho-luu-tru.git  
 cd ten-kho-luu-tru
 
-### Tạo môi trường ảo (khuyến nghị)
+### Tạo môi trường ảo
 
 python -m venv venv
 
@@ -98,9 +98,7 @@ http://localhost:8501
 
 ## Tác giả
 
-Tên tác giả: (điền tên của bạn)  
+Tên tác giả: Phan Sơn Thịnh, Phạm Văn Hoàng Thiên, Phạm Sỹ Đức 
 Lĩnh vực: Nông nghiệp thông minh, Machine Learning, Hệ thống hỗ trợ quyết định
 
-## Giấy phép
 
-MIT License
