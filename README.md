@@ -1,154 +1,106 @@
-#HỆ THỐNG HỖ TRỢ QUYẾT ĐỊNH CANH TÁC
 
-Decision Support System for Crop Cultivation Based on Machine Learning
+# Hệ thống hỗ trợ quyết định canh tác  
+Ứng dụng Machine Learning trong đánh giá điều kiện môi trường nông nghiệp
 
-1. Giới thiệu
+## Tổng quan
 
-Dự án này phát triển một hệ thống hỗ trợ quyết định canh tác (Decision Support System – DSS) dựa trên các yếu tố môi trường chủ đạo gồm lượng mưa, nhiệt độ không khí và độ ẩm. Hệ thống sử dụng mô hình Machine Learning để đánh giá mức độ phù hợp canh tác và cung cấp các khuyến nghị kỹ thuật có cơ sở sinh thái.
+Kho lưu trữ này chứa mã nguồn của một hệ thống hỗ trợ quyết định canh tác (Decision Support System – DSS) được xây dựng nhằm đánh giá mức độ phù hợp canh tác dựa trên các yếu tố môi trường chính gồm lượng mưa, nhiệt độ không khí và độ ẩm.
 
-Mục tiêu của dự án không chỉ dừng lại ở việc dự đoán, mà hướng tới việc hỗ trợ ra quyết định trong bối cảnh sản xuất thực tế, nơi điều kiện môi trường luôn biến động và người sử dụng cần các gợi ý rõ ràng, có thể hành động được.
+Hệ thống áp dụng các kỹ thuật Machine Learning để phân loại mức độ canh tác và kết hợp với các quy tắc sinh thái – nông học nhằm sinh ra các khuyến nghị kỹ thuật có ý nghĩa thực tiễn. Mục tiêu của hệ thống là hỗ trợ người sử dụng trong quá trình ra quyết định, thay vì chỉ cung cấp kết quả dự đoán.
 
-Ứng dụng được xây dựng bằng Streamlit nhằm phục vụ:
+Ứng dụng được phát triển bằng Streamlit, phù hợp cho trình diễn nghiên cứu, thử nghiệm mô hình và triển khai trong các hệ thống nông nghiệp thông minh.
 
-Trình diễn kết quả nghiên cứu
+## Chức năng
 
-Thử nghiệm và đánh giá mô hình
+- Nhập dữ liệu môi trường (lượng mưa, nhiệt độ, độ ẩm)
+- Phân loại mức độ phù hợp canh tác theo ba mức: Thấp, Trung bình, Cao
+- Sinh khuyến nghị canh tác theo các khía cạnh:
+  - Chiến lược sản xuất
+  - Quản lý nước
+  - Điều tiết nhiệt độ và vi khí hậu
+  - Nguy cơ sâu bệnh và sức khỏe hệ sinh thái
+  - Quản lý đất và định hướng sản xuất bền vững
 
-Ứng dụng trong các hệ thống nông nghiệp thông minh
+## Cấu trúc thư mục
 
-2. Chức năng chính
-
-Hệ thống cung cấp các chức năng sau:
-
-Nhập dữ liệu môi trường (thủ công hoặc từ nguồn bên ngoài)
-
-Dự đoán mức độ phù hợp canh tác theo ba mức: Thấp, Trung bình, Cao
-
-Sinh khuyến nghị canh tác theo nhiều khía cạnh:
-
-Chiến lược sản xuất
-
-Quản lý nước
-
-Quản lý nhiệt độ và vi khí hậu
-
-Rủi ro sâu bệnh và sức khỏe hệ sinh thái
-
-Định hướng quản lý đất, dinh dưỡng và sản xuất dài hạn
-
-Giao diện trực quan, dễ sử dụng, phù hợp cho cả người dùng kỹ thuật và người sản xuất
-
-3. Cấu trúc thư mục
 project/
-│── app.py
-│── README.md
-│── requirements.txt
-│
-├── models/
-│   ├── canh_tac_classifier.pkl
-│   └── scaler.pkl
-│
-└── assets/
-    └── background.png
+│── app.py  
+│── README.md  
+│── requirements.txt  
+│  
+├── models/  
+│   ├── canh_tac_classifier.pkl  
+│   └── scaler.pkl  
+│  
+└── assets/  
+    └── background.png  
 
+## Yêu cầu hệ thống
 
-Trong đó:
+- Python 3.9 trở lên
+- pip hoặc conda
+- Windows, Linux hoặc macOS
 
-app.py: ứng dụng Streamlit chính
+## Cài đặt
 
-models/: chứa mô hình Machine Learning và bộ chuẩn hóa dữ liệu
+### Tải mã nguồn
 
-assets/: tài nguyên giao diện
+git clone https://github.com/ten-nguoi-dung/ten-kho-luu-tru.git  
+cd ten-kho-luu-tru
 
-requirements.txt: danh sách các thư viện cần thiết
+### Tạo môi trường ảo (khuyến nghị)
 
-4. Yêu cầu hệ thống
-
-Python phiên bản 3.9 trở lên
-
-Trình quản lý gói pip hoặc conda
-
-Hệ điều hành: Windows, Linux hoặc macOS
-
-5. Cài đặt
-5.1. Tải mã nguồn
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-
-5.2. Tạo môi trường ảo (khuyến nghị)
 python -m venv venv
-
 
 Kích hoạt môi trường:
 
-Trên Windows:
-
+Windows:
 venv\Scripts\activate
 
-
-Trên Linux hoặc macOS:
-
+Linux / macOS:
 source venv/bin/activate
 
-5.3. Cài đặt các thư viện phụ thuộc
+### Cài đặt thư viện
+
 pip install -r requirements.txt
 
-6. Vận hành hệ thống
-
-Chạy ứng dụng Streamlit bằng lệnh:
+## Vận hành ứng dụng
 
 streamlit run app.py
 
-
-Sau khi khởi động thành công, ứng dụng sẽ được truy cập thông qua trình duyệt tại địa chỉ:
-
+Ứng dụng sẽ chạy tại địa chỉ:
 http://localhost:8501
 
-7. Hướng dẫn sử dụng
+## Hướng dẫn sử dụng
 
-Nhập các thông số môi trường gồm lượng mưa, nhiệt độ và độ ẩm.
+1. Nhập các thông số môi trường.
+2. Thực hiện phân tích trên giao diện.
+3. Xem kết quả đánh giá mức độ canh tác.
+4. Tham khảo các khuyến nghị kỹ thuật để hỗ trợ quyết định sản xuất.
 
-Thực hiện phân tích bằng nút chức năng trên giao diện.
+## Mô hình Machine Learning
 
-Quan sát kết quả đánh giá mức độ canh tác.
+- Mô hình được huấn luyện trên dữ liệu môi trường lịch sử.
+- Dữ liệu đầu vào được chuẩn hóa trước khi dự đoán.
+- Kết quả mang tính hỗ trợ quyết định, không thay thế hoàn toàn chuyên gia.
 
-Tham khảo các khuyến nghị kỹ thuật được sinh ra để hỗ trợ ra quyết định.
+## Giới hạn
 
-8. Ghi chú về mô hình Machine Learning
+- Chưa xét đến đặc thù từng loại cây trồng và điều kiện đất.
+- Cần kết hợp với điều kiện địa phương và kinh nghiệm sản xuất.
 
-Mô hình được huấn luyện trên tập dữ liệu khí hậu lịch sử.
+## Định hướng phát triển
 
-Dữ liệu đầu vào được chuẩn hóa trước khi dự đoán.
+- Cá nhân hóa theo cây trồng và vùng sinh thái
+- Tích hợp dữ liệu IoT và cảm biến
+- Ứng dụng GIS và phân vùng canh tác
+- Phân tích rủi ro và biến đổi khí hậu
 
-Kết quả của mô hình mang tính hỗ trợ quyết định và không thay thế hoàn toàn vai trò của chuyên gia hoặc cán bộ kỹ thuật.
+## Tác giả
 
-9. Giới hạn và lưu ý
+Tên tác giả: (điền tên của bạn)  
+Lĩnh vực: Nông nghiệp thông minh, Machine Learning, Hệ thống hỗ trợ quyết định
 
-Các khuyến nghị được xây dựng dựa trên các biến môi trường tổng quát, chưa xét đến đặc thù từng giống cây hoặc loại đất cụ thể.
+## Giấy phép
 
-Khi áp dụng trong thực tế, cần kết hợp với:
-
-Điều kiện địa phương
-
-Kinh nghiệm sản xuất
-
-Thông tin dự báo thời tiết và thị trường
-
-10. Hướng phát triển
-
-Các hướng mở rộng tiềm năng của dự án bao gồm:
-
-Cá nhân hóa khuyến nghị theo từng loại cây trồng
-
-Tích hợp dữ liệu từ cảm biến và hệ thống IoT
-
-Kết hợp bản đồ GIS để phân vùng sinh thái
-
-Phân tích kịch bản biến đổi khí hậu
-
-Đánh giá rủi ro và mức độ không chắc chắn của dự đoán
-
-11. Tác giả
-
-Tên tác giả: Phan Sơn Thịnh, Phạm Văn Hoàng Thiên, Phạm Sỹ Đức.
-Lĩnh vực: Nông nghiệp thông minh, Machine Learning, Hệ hỗ trợ quyết định
+MIT License
