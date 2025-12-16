@@ -23,7 +23,8 @@ Hệ thống áp dụng các kỹ thuật Machine Learning để phân loại m�
 
 ## Cấu trúc thư mục
 
-project/
+Hệ thống hỗ trợ quyết định canh tác/
+
 │── app.py  
 │── README.md  
 │── requirements.txt  
@@ -41,12 +42,11 @@ project/
 - pip hoặc conda
 - Windows, Linux hoặc macOS
 
-## Cài đặt
+## Cài đặt (Hướng dẫn cài đặt trên Vscode)
 
 ### Tải mã nguồn
 
-git clone https://github.com/ten-nguoi-dung/ten-kho-luu-tru.git  
-cd ten-kho-luu-tru
+Tải file Hệ thống hỗ trợ quyết định canh tác.zip, và mở file app.py
 
 ### Tạo môi trường ảo
 
