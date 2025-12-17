@@ -99,6 +99,7 @@ http://localhost:8501
 ## Tác giả
 
 Tên tác giả: Phan Sơn Thịnh, Phạm Văn Hoàng Thiên, Phạm Sỹ Đức 
+
 Lĩnh vực: Nông nghiệp thông minh, Machine Learning, Hệ thống hỗ trợ quyết định
 
 
